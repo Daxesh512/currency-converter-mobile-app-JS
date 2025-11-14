@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.appcache">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="icon" sizes="192x192" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="new.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <title>Currency Calculator</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <button onclick="openMenu()" class="openMenu" id="openMenu">☰</button>
+        <div id="title">Currency Converter</div>
+    </div>
+</header>
+<div id="hamburger" class="menu">
+    <button onclick="closeMenu()" class="closeMenu" id="closeMenu">✖</button>
+    <br>
+From:
+    <br>
+<select class ="from" id="from">
+    <option class = "EUR" value="1">EUR &#x1F1EA;&#x1F1FA;</option>
+    <option class = "USD" value="1.1066">USD &#x1F1FA;&#x1F1F8;</option>
+    <option class = "JPY" value="120.10">JPY &#x1F1EF;&#x1F1F5;</option>
+    <option class = "BGN" value="1.9558">BGN &#x1F1E7;&#x1F1EC;</option>
+    <option class = "CZK" value="25.177">CZK &#x1F1E8;&#x1F1FF;</option>
+    <option class = "DKK" value="7.4729">DKK &#x1F1E9;&#x1F1F0;</option>
+    <option class = "GBP" value="0.84775">GBP &#x1F1EC;&#x1F1E7;</option>
+    <option class = "HUF" value="337.70">HUF &#x1F1ED;&#x1F1FA;</option>
+    <option class = "PLN" value="4.2968">PLN &#x1F1F5;&#x1F1F1;</option>
+    <option class = "RON" value="4.7788">RON &#x1F1F7;&#x1F1F4;</option>
+    <option class = "SEK" value="10.6808">SEK &#x1F1F8;&#x1F1EA;</option>
+    <option class = "CHF" value="1.0672">CHF &#x1F1E8;&#x1F1ED;</option>
+    <option class = "ISK" value="137.30">ISK &#x1F1EE;&#x1F1F8;</option>
+    <option class = "NOK" value="10.2590">NOK &#x1F1F3;&#x1F1F4;</option>
+    <option class = "HRK" value="7.4465">HRK &#x1F1ED;&#x1F1F7;</option>
+    <option class = "RUB" value="70.5988">RUB &#x1F1F7;&#x1F1FA;</option>
+    <option class = "TRY" value="6.6221">TRY &#x1F1F9;&#x1F1F7;</option>
+    <option class = "AUD" value="1.6521">AUD &#x1F1E6;&#x1F1FA;</option>
+    <option class = "BRL" value="4.7170">BRL &#x1F1E7;&#x1F1F7;</option>
+    <option class = "CAD" value="1.4647">CAD &#x1F1E8;&#x1F1E6;</option>
+    <option class = "CNY" value="7.7681">CNY &#x1F1E8;&#x1F1F3;</option>
+    <option class = "HKD" value="8.5935">HKD &#x1F1ED;&#x1F1F0;</option>
+    <option class = "IDR" value="15209.45">IDR &#x1F1EE;&#x1F1E9;</option>
+    <option class = "ILS" value="3.8135">ILS &#x1F1EE;&#x1F1F1;</option>
+    <option class = "INR" value="79.0035">INR &#x1F1EE;&#x1F1F3;</option>
+    <option class = "KRW" value="1319.12">KRW &#x1F1F0;&#x1F1F7;</option>
+    <option class = "MXN" value="20.8183">MXN &#x1F1F2;&#x1F1FD;</option>
+    <option class = "MYR" value="4.5526">MYR &#x1F1F2;&#x1F1FE;</option>
+    <option class = "NZD" value="1.7106">NZD &#x1F1F3;&#x1F1FF;</option>
+    <option class = "PHP" value="56.293">PHP &#x1F1F5;&#x1F1ED;</option>
+    <option class = "SGD" value="1.5138">SGD &#x1F1F8;&#x1F1EC;</option>
+    <option class = "THB" value="34.349">THB &#x1F1F9;&#x1F1ED;</option>
+    <option class = "ZAR" value="16.4806">ZAR &#x1F1FF;&#x1F1E6;</option>
+</select>
+    <br>
+To:
+    <br>
+<select id="to">
+    <option class = "EUR" value="1">EUR &#x1F1EA;&#x1F1FA;</option>
+    <option class = "USD" value="1.1066">USD &#x1F1FA;&#x1F1F8;</option>
+    <option class = "JPY" value="120.10">JPY &#x1F1EF;&#x1F1F5;</option>
+    <option class = "BGN" value="1.9558">BGN &#x1F1E7;&#x1F1EC;</option>
+    <option class = "CZK" value="25.177">CZK &#x1F1E8;&#x1F1FF;</option>
+    <option class = "DKK" value="7.4729">DKK &#x1F1E9;&#x1F1F0;</option>
+    <option class = "GBP" value="0.84775">GBP &#x1F1EC;&#x1F1E7;</option>
+    <option class = "HUF" value="337.70">HUF &#x1F1ED;&#x1F1FA;</option>
+    <option class = "PLN" value="4.2968">PLN &#x1F1F5;&#x1F1F1;</option>
+    <option class = "RON" value="4.7788">RON &#x1F1F7;&#x1F1F4;</option>
+    <option class = "SEK" value="10.6808">SEK &#x1F1F8;&#x1F1EA;</option>
+    <option class = "CHF" value="1.0672">CHF &#x1F1E8;&#x1F1ED;</option>
+    <option class = "ISK" value="137.30">ISK &#x1F1EE;&#x1F1F8;</option>
+    <option class = "NOK" value="10.2590">NOK &#x1F1F3;&#x1F1F4;</option>
+    <option class = "HRK" value="7.4465">HRK &#x1F1ED;&#x1F1F7;</option>
+    <option class = "RUB" value="70.5988">RUB &#x1F1F7;&#x1F1FA;</option>
+    <option class = "TRY" value="6.6221">TRY &#x1F1F9;&#x1F1F7;</option>
+    <option class = "AUD" value="1.6521">AUD &#x1F1E6;&#x1F1FA;</option>
+    <option class = "BRL" value="4.7170">BRL &#x1F1E7;&#x1F1F7;</option>
+    <option class = "CAD" value="1.4647">CAD &#x1F1E8;&#x1F1E6;</option>
+    <option class = "CNY" value="7.7681">CNY &#x1F1E8;&#x1F1F3;</option>
+    <option class = "HKD" value="8.5935">HKD &#x1F1ED;&#x1F1F0;</option>
+    <option class = "IDR" value="15209.45">IDR &#x1F1EE;&#x1F1E9;</option>
+    <option class = "ILS" value="3.8135">ILS &#x1F1EE;&#x1F1F1;</option>
+    <option class = "INR" value="79.0035">INR &#x1F1EE;&#x1F1F3;</option>
+    <option class = "KRW" value="1319.12">KRW &#x1F1F0;&#x1F1F7;</option>
+    <option class = "MXN" value="20.8183">MXN &#x1F1F2;&#x1F1FD;</option>
+    <option class = "MYR" value="4.5526">MYR &#x1F1F2;&#x1F1FE;</option>
+    <option class = "NZD" value="1.7106">NZD &#x1F1F3;&#x1F1FF;</option>
+    <option class = "PHP" value="56.293">PHP &#x1F1F5;&#x1F1ED;</option>
+    <option class = "SGD" value="1.5138">SGD &#x1F1F8;&#x1F1EC;</option>
+    <option class = "THB" value="34.349">THB &#x1F1F9;&#x1F1ED;</option>
+    <option class = "ZAR" value="16.4806">ZAR &#x1F1FF;&#x1F1E6;</option>
+</select>
+<br>
+Bank fee:
+    <br>
+<select id="fee" class="dropdown">
+    <option value="0">0%</option>
+    <option value="0.02">2%</option>
+    <option value="0.04">4%</option>
+    <option value="0.06">6%</option>
+</select>
+    <br><br>
+    <button id="apply" onclick="closeMenu()" >Apply</button>
+</div>
+<!--<div id="grid"class="fullgrid">-->
+<h1 id="display"></h1>
+<div class ="buttongrid">
+<input class="calcbutton" id="7" type="button" value="7">
+<input class="calcbutton" id="8" type="button" value="8">
+<input class="calcbutton" id="9" type="button" value="9">
+<input class="calcbutton" id="4" type="button" value="4">
+<input class="calcbutton" id="5" type="button" value="5">
+<input class="calcbutton" id="6" type="button" value="6">
+<input class="calcbutton" id="1" type="button" value="1">
+<input class="calcbutton" id="2" type="button" value="2">
+<input class="calcbutton" id="3" type="button" value="3">
+<input class="calcbutton" id="C" type="button" value="C">
+<input class="calcbutton" id="0" type="button" value="0">
+<input class="calcbutton" id="equals" type="button" value="=">
+</div>
+<!--</div>-->
+</body>
+<script src="Model.js"></script>
+<script src="View.js"></script>
+<script src="Controller.js"></script>
+</html>

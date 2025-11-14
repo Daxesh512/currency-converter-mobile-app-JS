@@ -1,0 +1,112 @@
+* {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.83);
+}
+header {
+    padding-top: 0;
+    font-size: 2.2rem;
+}
+header, footer{
+    background-color: black;
+    color: white;
+}
+#display {
+    height: 13vh;
+    text-align: center;
+    font-size: 3rem;
+    background-color: rgba(36,36,36,0.8);
+    color: white;
+}
+.openMenu {
+    height:2rem;
+    width:2rem;
+    float: left;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.buttongrid {
+    display: inline-grid;
+    grid-template-rows: 14vh 14vh 14vh 14vh;
+    grid-template-columns: 14vh 14vh 14vh;
+    grid-gap: 0.5rem;
+    justify-content: center;
+}
+.calcbutton {
+    border-radius: 50%;
+    font-size: 4rem;
+    color: white;
+    border-color: black;
+    background-color: rgba(69,69,69,0.58);
+}
+h1 {
+    font-size: 2em;
+    margin: 0.1em 0;
+}
+#hamburger {
+    width: 0;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 10;
+    display:block;
+    height:100%;
+    color: white;
+    font-size: 2rem;
+    font-family: "Calibri Light";
+    transition: 0.5s;
+    background-color: rgba(30, 30, 30, 0.84);
+}
+
+
+.test{
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+    float: left;
+    z-index: 1;
+}
+
+#apply {
+    border-radius: 10%;
+    font-size: 2.4rem;
+    color: white;
+    border-color: black;
+    background-color: rgba(69,69,69,0.58);
+}
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#equals, #C {
+    color: black;
+}
+
+.closeMenu {
+    height:2rem;
+    width:2rem;
+    float: left;
+    /*background-color: black;*/
+    background-color: rgba(30, 30, 30, 0.84);
+    color: white;
+    border: none;
+}
+#apply {
+    background-color: #3a3a3a;
+}
